@@ -2,7 +2,7 @@ package ListInterface.OperacoesBasicas;
 
 
 import java.util.ArrayList;
-import java.util.Collections;
+
 
 public class ListaTarefas {
     private ArrayList<Tarefa> listaTarefas;
@@ -30,9 +30,11 @@ public class ListaTarefas {
     }
     public void obterDescricoesTarefas(){
         for(int i = 0; i < listaTarefas.size(); i++){
-            System.out.printf("\n%s\n", listaTarefas.get(i));
+           System.out.printf("\nTarefa %d -> %s", i,listaTarefas.get(i));
         }
-        //System.out.println(listaTarefas);
+        System.out.println();
+        System.out.println(listaTarefas);
+
     }
 
 
