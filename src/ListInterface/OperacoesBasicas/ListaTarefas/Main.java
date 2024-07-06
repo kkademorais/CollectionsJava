@@ -1,6 +1,4 @@
-package ListInterface.OperacoesBasicas;
-
-import java.util.ArrayList;
+package ListInterface.OperacoesBasicas.ListaTarefas;
 
 public class Main {
     public static void main(String[] args) {
