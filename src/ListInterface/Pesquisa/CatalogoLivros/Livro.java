@@ -33,9 +33,4 @@ public class Livro {
                 ", anoPublicacao=" + anoPublicacao +
                 '}';
     }
-
-    //@Override
-    //public String toString() {
-    //    return titulo + autor;
-    //}
 }
