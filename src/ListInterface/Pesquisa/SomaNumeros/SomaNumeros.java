@@ -6,7 +6,7 @@ import java.util.List;
 public class SomaNumeros {
 
     //Atributo -> lista de números inteiros
-    public ArrayList<Integer> ListaNumeros;
+    private ArrayList<Integer> ListaNumeros;
 
     public SomaNumeros(){
         this.ListaNumeros = new ArrayList<>();
