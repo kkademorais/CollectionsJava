@@ -1,8 +1,8 @@
 package ListInterface.Ordenacao.OrdenacaoPessoas;
 import java.util.ArrayList;
-import java.lang.Comparable;
+import java.util.Collections;
 
-public class OrdenacaoPessoas {
+public class OrdenacaoPessoas{
 
     //Atributos -> Lista de Pessoas
     private ArrayList<Pessoa> ListaPessoas;
@@ -18,17 +18,24 @@ public class OrdenacaoPessoas {
         ListaPessoas.add(pessoaAdd);
     }
 
-        //Ordena por idade usando Comparable
-    public void ordenarPorIdade(){
-       
+
+
+    //Ordena por idade usando Comparable
+    public ArrayList<Pessoa> ordenarPorIdade(){
+        ArrayList<Pessoa> pessoasPorIdade = new ArrayList<>(ListaPessoas);
+        Collections.sort(pessoasPorIdade);
+        return pessoasPorIdade;
+        //Need study Comparable
 
     }
 
         //Ordena por altura usando Comparator personalizado
-    public void ordenarPorAltura(){
-
+    public ArrayList<Pessoa> ordenarPorAltura(){
+        ArrayList<Pessoa> pessoasPorAltura = new ArrayList<>(ListaPessoas);
+        Collections.sort(pessoasPorAltura, new ComparatorPorAltura());
+        return pessoasPorAltura;
+        //Need study Comparator
     }
-
 
 
 }
