@@ -18,24 +18,48 @@ public class OrdenacaoPessoas{
         ListaPessoas.add(pessoaAdd);
     }
 
+    public void printarPessoas(){
+        for(Pessoa p: ListaPessoas){
+            System.out.println();
+            System.out.printf("Nome: %s \n", p.getNome());
+            System.out.printf("Idade: %d \n", p.getIdade());
+            System.out.printf("Altura : %.2f \n", p.getAltura());
+        }
+    }
+
 
 
     //Ordena por idade usando Comparable
-    public ArrayList<Pessoa> ordenarPorIdade(){
+    public void ordenarPorIdade(){
         ArrayList<Pessoa> pessoasPorIdade = new ArrayList<>(ListaPessoas);
         Collections.sort(pessoasPorIdade);
-        return pessoasPorIdade;
+        for(Pessoa p: pessoasPorIdade){
+            System.out.println();
+            System.out.printf("Nome: %s \n", p.getNome());
+            System.out.printf("Idade: %d \n", p.getIdade());
+            System.out.printf("Altura : %.2f \n", p.getAltura());
+        }
         //Need study Comparable
 
     }
 
         //Ordena por altura usando Comparator personalizado
-    public ArrayList<Pessoa> ordenarPorAltura(){
+    public void ordenarPorAltura(){
         ArrayList<Pessoa> pessoasPorAltura = new ArrayList<>(ListaPessoas);
         Collections.sort(pessoasPorAltura, new ComparatorPorAltura());
-        return pessoasPorAltura;
+        for(Pessoa p: pessoasPorAltura){
+            System.out.println();
+            System.out.printf("Nome: %s \n", p.getNome());
+            System.out.printf("Idade: %d \n", p.getIdade());
+            System.out.printf("Altura : %.2f \n", p.getAltura());
+        }
         //Need study Comparator
     }
 
-
+    @Override
+    public String toString() {
+        return "OrdenacaoPessoas{" +
+                "ListaPessoas=" + ListaPessoas +
+                '}';
+    }
 }
