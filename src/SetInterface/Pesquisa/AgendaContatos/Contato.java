@@ -20,4 +20,9 @@ public class Contato {
     public int getNumeroTelefone() {
         return numeroTelefone;
     }
+
+        //Setter
+    public void setNumeroTelefone(int numeroTelefone) {
+        this.numeroTelefone = numeroTelefone;
+    }
 }

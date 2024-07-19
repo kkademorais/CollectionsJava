@@ -21,4 +21,9 @@ public class Tarefa {
     public String getDescricao() {
         return descricao;
     }
+
+        //Setter
+    public void setTarefaConcluida(boolean tarefaConcluida) {
+        this.tarefaConcluida = tarefaConcluida;
+    }
 }

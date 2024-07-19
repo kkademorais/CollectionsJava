@@ -13,7 +13,7 @@ public class Main {
         System.out.println("Adicionando contatos na lista!");
         ListaContatos.adicionarContato("Kaike", 22);
         ListaContatos.adicionarContato("Barreto", 20);
-        ListaContatos.adicionarContato("Vimieiro", 2);
+        ListaContatos.adicionarContato("Vimieiro", 26);
         ListaContatos.adicionarContato("Pistola", 15);
         ListaContatos.adicionarContato("Piovani", 16);
         System.out.println();
@@ -34,6 +34,10 @@ public class Main {
         ListaContatos.atualizarNumeroContato("Vimieiro", 27);
         System.out.println();
 
+        System.out.println();
+        System.out.println("Imprimindo lista atualizada!");
+        ListaContatos.exibirContatos();
+        System.out.println();
 
     }
 }

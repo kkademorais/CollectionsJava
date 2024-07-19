@@ -41,6 +41,39 @@ public class Main {
         tarefasList.contarTarefas();
         System.out.println();
 
+        System.out.println();
+        System.out.println("Marcando tarefas concluídas!");
+        tarefasList.marcarTarefaConcluida("Limpar casa");
+        tarefasList.marcarTarefaConcluida("Lavar louça");
+        tarefasList.marcarTarefaConcluida("Ir pra academia");
+        System.out.println();
+
+        System.out.println();
+        System.out.println("Exibindo tarefas concluídas!");
+        tarefasList.obterTarefasConcluidas();
+        System.out.println();
+
+        System.out.println();
+        System.out.println("Exibindo nova lista atualizada!");
+        tarefasList.exibirTarefas();
+        System.out.println();
+        System.out.println("Contando tarefas!");
+        tarefasList.contarTarefas();
+        System.out.println();
+
+
+        System.out.println();
+        System.out.println("Marcando tarefas pendentes!");
+        tarefasList.marcarTarefaPendente("Limpar casa");
+        System.out.println();
+
+        System.out.println();
+        System.out.println("Exibindo nova lista atualizada!");
+        tarefasList.exibirTarefas();
+        System.out.println();
+        System.out.println("Contando tarefas!");
+        tarefasList.contarTarefas();
+        System.out.println();
 
     }
 }

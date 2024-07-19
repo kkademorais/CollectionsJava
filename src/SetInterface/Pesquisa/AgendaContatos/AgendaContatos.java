@@ -31,8 +31,8 @@ public class AgendaContatos {
             if(c.getNome().equalsIgnoreCase(nome.replace(" ", ""))){
                 ListaContatosProcurados.add(c);
             }
-            //TERMINAR -> NÚMERO DE PARÂMETROS (?)
         }
+        System.out.println();
         System.out.println("Retornando lista com contatos encontrados: ");
         for(Contato c: ListaContatosProcurados){
             System.out.printf("\nNome: %s", c.getNome());
@@ -46,8 +46,7 @@ public class AgendaContatos {
         System.out.printf("Contato a ser atualizado: %s\n", nome);
         for(Contato c: ListaContatos){
             if(c.getNome().equalsIgnoreCase(nome.replace(" ", ""))){
-                //c.getNumeroTelefone() = novoNumero;
-                    //Terminar
+                c.setNumeroTelefone(novoNumero);
             }
         }
         System.out.println();

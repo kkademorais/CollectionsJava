@@ -35,17 +35,15 @@ public class ListaTarefas {
                 System.out.println("Tarefa dentro da lista!");
                 tarefaRemover = t;
                 tarefaNaLista = true;
+                TarefaList.remove(tarefaRemover);
+                System.out.println("Tarefa removida!");
+                System.out.printf("\nDescrição: %s", tarefaRemover.getDescricao());
+                System.out.printf("\nConcluída: %b\n", tarefaRemover.isTarefaConcluida());
                 break;
             }
         }
-        if(!tarefaNaLista){
+        if(tarefaNaLista){
             System.out.println("Tarefa não está na lista!");
-        }
-        else{
-            TarefaList.remove(tarefaRemover);
-            System.out.println("Tarefa removida!");
-            System.out.printf("\nDescrição: %s", tarefaRemover.getDescricao());
-            System.out.printf("\nConcluída: %b\n", tarefaRemover.isTarefaConcluida());
         }
     }
 
@@ -87,10 +85,26 @@ public class ListaTarefas {
     }
 
         //Pega descrição e marca tarefa como concluída
-    public void marcarTarefaConcluida(String descricao){}
+    public void marcarTarefaConcluida(String descricao){
+        System.out.println("Marcar tarefa da lista como concluída!");
+        for(Tarefa t: TarefaList){
+            if(t.getDescricao().equalsIgnoreCase(descricao.replace(" ", ""))){
+                System.out.printf("Tarefa concluída: %s", t.getDescricao());
+                t.setTarefaConcluida(true);
+            }
+        }
+    }
 
         //Pega descrição e marca tarefa como pendente
-    public void marcarTarefaPendente(String descricao){}
+    public void marcarTarefaPendente(String descricao){
+        System.out.println("Marcar tarefa da lista como pendente!");
+        for(Tarefa t: TarefaList){
+            if(t.getDescricao().equalsIgnoreCase(descricao.replace(" ", ""))){
+                System.out.printf("Tarefa pendente: %s", t.getDescricao());
+                t.setTarefaConcluida(false);
+            }
+        }
+    }
 
         //Remove todas as tarefas da lista
     public void limparListaTarefas(){
