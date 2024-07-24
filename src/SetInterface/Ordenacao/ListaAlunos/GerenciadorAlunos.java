@@ -1,6 +1,7 @@
 package SetInterface.Ordenacao.ListaAlunos;
 
 import java.util.HashSet;
+import java.util.TreeSet;
 
 public class GerenciadorAlunos {
 
@@ -27,30 +28,40 @@ public class GerenciadorAlunos {
 
         //Remove aluno da lista a partir da matricula, se estiver presente
     public void removerAluno(long matricula){
-        boolean alunoNoSistema = false;
         HashSet<Aluno> alunoRemover = new HashSet<>();
         for(Aluno a: listaAlunos){
             if(a.getMatricula() == matricula){
                 System.out.println();
                 System.out.println("Aluno presente no sistema!");
-                alunoNoSistema = true;
                 alunoRemover.add(a);
                 System.out.println("Aluno removido: ");
                 System.out.printf("\nNome do aluno: %s", a.getNome());
                 System.out.printf("\nNúmero de matrícula: %d", a.getMatricula());
                 System.out.printf("\nNota do aluno: %.2f\n", a.getNota());
+                return;
             }
         }
-        if(!alunoNoSistema){
-            System.out.println("Aluno não está presente no sistema!");
-        }
+        System.out.println("Aluno não está presente no sistema!");
     }
 
         //Mostrar alunos da lista em ordem alfabética de nome
-    public void exibirAlunosPorNome(){}
+    public void exibirAlunosPorNome(){
+        TreeSet<Aluno> alunosPorNome = new TreeSet<>(listaAlunos);
+        System.out.println("Exibindo lista de alunos ordenados por ordem alfabética: ");
+        for(Aluno a: alunosPorNome){
+            System.out.printf("%s\n", a);
+        }
+    }
 
         //Mostrar alunos da lista em ordem crescente de nota
-    public void exibirAlunosPorNota(){}
+    public void exibirAlunosPorNota(){
+        TreeSet<Aluno> alunosPorNota = new TreeSet<>(new ComparatorPorNota());
+        alunosPorNota.addAll(listaAlunos);
+        System.out.println("Exibindo lista de alunos ordenados por nota: ");
+        for(Aluno a: alunosPorNota){
+            System.out.printf("%s\n", a);
+        }
+    }
 
         //Getter
     public void exibirAlunos(){

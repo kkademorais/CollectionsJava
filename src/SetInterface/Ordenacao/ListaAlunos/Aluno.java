@@ -1,6 +1,6 @@
 package SetInterface.Ordenacao.ListaAlunos;
 
-public class Aluno {
+public class Aluno implements Comparable<Aluno>{
 
     //Atributos
     private String nome;
@@ -15,7 +15,13 @@ public class Aluno {
     }
 
     //Métodos
-        //Getter
+        //Compareto
+    @Override
+    public int compareTo(Aluno a) {
+        return nome.compareToIgnoreCase(a.getNome());
+    }
+
+    //Getter
     public String getNome() {
         return nome;
     }
@@ -24,5 +30,12 @@ public class Aluno {
     }
     public double getNota() {
         return nota;
+    }
+
+    @Override
+    public String toString() {
+        return '\n' + "Aluno = " + nome + '\n' +
+                "Matrícula = " + matricula + '\n' +
+                "Nota = " + nota + '\n';
     }
 }

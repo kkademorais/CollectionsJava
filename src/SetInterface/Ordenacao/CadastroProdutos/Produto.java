@@ -1,6 +1,6 @@
 package SetInterface.Ordenacao.CadastroProdutos;
 
-public class Produto {
+public class Produto implements Comparable<Produto>{
 
     //Atributos
     private String nome;
@@ -17,7 +17,13 @@ public class Produto {
     }
 
     //Métodos
-        //Getter
+        //Compareto
+    @Override
+    public int compareTo(Produto p) {
+        return nome.compareToIgnoreCase(p.getNome());
+    }
+
+    //Getter
     public String getNome() {
         return nome;
     }
@@ -29,5 +35,21 @@ public class Produto {
     }
     public int getQuantidade() {
         return quantidade;
+    }
+
+    @Override
+    public String toString() {
+        return '\n' +
+                "Produto = " +
+                nome +
+                '\n' +
+                "Código do produto = " +
+                codigo +
+                '\n' +
+                "Preço (R$) = " +
+                preco +
+                '\n' +
+                "Quantidade = " +
+                quantidade;
     }
 }

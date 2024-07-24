@@ -27,24 +27,20 @@ public class ListaTarefas {
 
         //Remove tarefa da lista com base na descrição
     public void removerTarefa(String descricao){
-        boolean tarefaNaLista = false;
         Tarefa tarefaRemover = null;
         for(Tarefa t: TarefaList){
-            if(t.getDescricao().equalsIgnoreCase(descricao.replace(" ", ""))){
+            if(t.getDescricao().equalsIgnoreCase(descricao)){
                 System.out.println();
                 System.out.println("Tarefa dentro da lista!");
                 tarefaRemover = t;
-                tarefaNaLista = true;
                 TarefaList.remove(tarefaRemover);
                 System.out.println("Tarefa removida!");
                 System.out.printf("\nDescrição: %s", tarefaRemover.getDescricao());
                 System.out.printf("\nConcluída: %b\n", tarefaRemover.isTarefaConcluida());
-                break;
+                return;
             }
         }
-        if(tarefaNaLista){
-            System.out.println("Tarefa não está na lista!");
-        }
+        System.out.println("Tarefa não está na lista!");
     }
 
         //Número total de tarefas na lista -> size
@@ -86,9 +82,10 @@ public class ListaTarefas {
 
         //Pega descrição e marca tarefa como concluída
     public void marcarTarefaConcluida(String descricao){
+        System.out.println();
         System.out.println("Marcar tarefa da lista como concluída!");
         for(Tarefa t: TarefaList){
-            if(t.getDescricao().equalsIgnoreCase(descricao.replace(" ", ""))){
+            if(t.getDescricao().equalsIgnoreCase(descricao)){
                 System.out.printf("Tarefa concluída: %s", t.getDescricao());
                 t.setTarefaConcluida(true);
             }
@@ -99,7 +96,7 @@ public class ListaTarefas {
     public void marcarTarefaPendente(String descricao){
         System.out.println("Marcar tarefa da lista como pendente!");
         for(Tarefa t: TarefaList){
-            if(t.getDescricao().equalsIgnoreCase(descricao.replace(" ", ""))){
+            if(t.getDescricao().equalsIgnoreCase(descricao)){
                 System.out.printf("Tarefa pendente: %s", t.getDescricao());
                 t.setTarefaConcluida(false);
             }

@@ -75,5 +75,24 @@ public class Main {
         tarefasList.contarTarefas();
         System.out.println();
 
+        System.out.println();
+        System.out.println("Exibindo tarefas pendentes!");
+        tarefasList.obterTarefasPendentes();
+        System.out.println();
+
+        System.out.println();
+        System.out.println("Limpando lista de tarefas: ");
+        tarefasList.limparListaTarefas();
+        System.out.println();
+
+        System.out.println();
+        System.out.println("Exibindo nova lista atualizada!");
+        tarefasList.exibirTarefas();
+        System.out.println();
+        System.out.println("Contando tarefas!");
+        tarefasList.contarTarefas();
+        System.out.println();
+
+
     }
 }
